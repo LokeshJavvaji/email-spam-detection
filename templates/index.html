@@ -58,9 +58,13 @@
             <input type="text" id="email_text" name="email_text" placeholder="Enter email text..." required>
             <input type="submit" value="Predict">
         </form>
-        {% if prediction %}
+        {% if prediction is defined %}
         <div class="prediction">
-            <p>Prediction: {{ prediction }}</p>
+            {% if prediction == 1 %}
+                <p>Prediction: Ham Mail</p>
+            {% else %}
+                <p>Prediction: Spam  Mail</p>
+            {% endif %}
         </div>
         {% endif %}
     </div>
